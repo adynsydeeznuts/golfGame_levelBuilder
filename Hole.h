@@ -1,8 +1,6 @@
 #ifndef HOLE_H
 #define HOLE_H
 
-#include "ball.h"
-
 class Hole {
 private:
     float x;       // X-coordinate of the hole
@@ -23,12 +21,6 @@ public:
     void setY(float newY) { y = newY; }
     void setRadius(float newRadius) { radius = newRadius; }
 
-    // Check if a point is inside the hole
-    bool isBallInHole(Ball ball) const {
-        float dx = ball.getPosition().x - x;
-        float dy = ball.getPosition().y - y;
-        return (dx * dx + dy * dy) <= (radius * radius);
-    }
 };
 
 #endif // HOLE_H
